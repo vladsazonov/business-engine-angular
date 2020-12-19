@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>{{ data?.user?.name }}</h1>
+<div mat-dialog-content>Примите решение</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" (click)="handleListItemClick(false)">Отклонить</button>
+  <button mat-flat-button color="primary" (click)="handleListItemClick(true)">Принять</button>
+</div>

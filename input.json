@@ -1,0 +1,67 @@
+{
+  "document": "TEST Document",
+  "result": null,
+  "accepting": [
+    {
+      "condition": "and",
+      "step": 1,
+      "result": null,
+      "users": [
+        {
+          "id": 1,
+          "name": "User 1",
+          "result": null
+        },
+        {
+          "id": 2,
+          "name": "User 2",
+          "result": null
+        },
+        {
+          "id": 3,
+          "name": "User 3",
+          "result": null
+        }
+      ]
+    },
+    {
+      "condition": "or",
+      "step": 2,
+      "result": null,
+      "users": [
+        {
+          "id": 4,
+          "name": "User 4",
+          "result": null
+        },
+        {
+          "id": 5,
+          "name": "User 5",
+          "result": null
+        }
+      ]
+    },
+    {
+      "condition": "or",
+      "step": 3,
+      "result": null,
+      "users": [
+        {
+          "id": 6,
+          "name": "User 6",
+          "result": null
+        },
+        {
+          "id": 7,
+          "name": "User 7",
+          "result": null
+        },
+        {
+          "id": 8,
+          "name": "User 8",
+          "result": null
+        }
+      ]
+    }
+  ]
+}
