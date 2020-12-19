@@ -1,0 +1,48 @@
+.app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    width: 600px;
+    height: 70%;
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  &__button {
+    margin: 12px 0 0 0 !important;
+  }
+
+  &__final-document {
+    max-height: 370px;
+    overflow: auto;
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+    padding: 24px;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .mat-list-item-disabled {
+    background-color: transparent !important;
+    color: #b1b1b1 !important;
+  }
+
+  .mat-list-item {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<div class="app">
+  <mat-tab-group
+    mat-stretch-tabs
+    class="app__container mat-elevation-z4"
+    [selectedIndex]="currentTabIndex"
+    (selectedIndexChange)="(currentTabIndex)"
+  >
+    <form [formGroup]="form">
+      <mat-tab disabled label="Json">
+        <mat-form-field appearance="outline" class="app__field">
+          <mat-label>Вставьте JSON</mat-label>
+          <textarea
+            matInput
+            formControlName="json"
+            cdkTextareaAutosize
+            [cdkAutosizeMinRows]="25"
+            [cdkAutosizeMaxRows]="25"
+          ></textarea>
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          class="app__button"
+          [disabled]="!tryParseJSON(form.get('json')?.value)"
+          (click)="loadJSON()"
+        >
+          Загрузить
+        </button>
+      </mat-tab>
+
+      <mat-tab disabled label="Процесс принятия">
+        <mat-list *ngFor="let elem of json?.accepting" role="list">
+          <mat-list-item
+            *ngFor="let user of elem.users"
+            role="listitem"
+            [disabled]="elem.step !== currentConditionStep"
+            (click)="handleOpenAcceptingDialog(user)"
+          >
+            {{ user.name }}
+          </mat-list-item>
+        </mat-list>
+
+        <button
+          mat-flat-button
+          color="primary"
+          class="app__button"
+          (click)="doneProcess()"
+          [disabled]="!isAllStepsDone(json && json.accepting)"
+        >
+          Завершить
+        </button>
+      </mat-tab>
+
+      <mat-tab disabled label="Результат">
+        <h4>{{ json && json.result ? 'Принят' : 'Отклонен' }}</h4>
+        <pre class="app__final-document">
+          {{ parsedJson }}
+        </pre>
+
+        <button mat-flat-button color="primary" (click)="revertProcess()">Сбросить</button>
+      </mat-tab>
+    </form>
+  </mat-tab-group>
+</div>
